@@ -2,8 +2,7 @@
 
     <section>
         <div class="container">
-
-            <div class="card mx-auto" style="max-width: 600px">
+            <div class="card mx-auto" style="max-width: 500px">
                 <div class="card-header text-center">Inscription</div>
                 <div class="card-body">
                     <form>
@@ -33,7 +32,6 @@
                     </form>
                 </div>
             </div>
-
         </div>
     </section>
 
