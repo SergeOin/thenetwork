@@ -11356,9 +11356,33 @@ a.text-dark:focus {
   }
 }
 
+#header {
+  margin-bottom: 20px;
+}
+
 #footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+.sidebar {
+  width: 100%;
+  top: 0;
+  padding: 0 15px;
+  margin-bottom: 20px;
+}
+
+.nav-link {
+  color: black;
+}
+
+.post {
+  margin-bottom: 20px;
+}
+
+.post-section {
+  height: 90vh;
+  overflow-y: scroll;
 }
 
