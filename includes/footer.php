@@ -1,5 +1,5 @@
 </main>
-<footer id="footer" class="bg-dark text-white py-5">
+<footer id="footer" class="bg-dark text-white py-5 text-center">
     <div class="container">
         Copyright - <?php echo date( 'Y' ); ?> - The Network
     </div>

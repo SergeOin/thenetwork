@@ -11356,3 +11356,9 @@ a.text-dark:focus {
   }
 }
 
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
