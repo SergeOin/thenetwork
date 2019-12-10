@@ -7,12 +7,13 @@
                     <div class="card profile-picture">
                         <div class="card-body">
                             <button class="btn-outline-dark rounded float-right">+</button>
-                            <img src="#" alt="Photo de profil">
+                            <img class="d-block w-100" src="#" alt="Photo de profil">
                         </div>
                     </div>
                     <div class="card profile-info">
                         <div class="card-header">
                             <div>-Prénom user--Nom user-</div>
+                            <p class="mb-0">Inscrit<?php echo getDateForHumans($user['created_at']);?></p>
                         </div>
                         <div class="card-body">
                             <div>Informations</div>
