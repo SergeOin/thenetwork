@@ -22,16 +22,24 @@
             </button>
             <a class="navbar-brand font-weight-bold" href="./index.php">The Network</a>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <form class="form-inline mr-auto ml-3 my-2 my-lg-0">
+                <form class="form-inline mr-auto my-2 my-lg-0">
                     <input class="form-control mr-sm-2" style="width: 30vw" type="search" placeholder="Rechercher" aria-label="Search">
                     <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Rechercher</button>
                 </form>
-                <ul class="navbar-nav mt-2 mt-lg-0">
+                <ul class="navbar-nav mt-2 mr-4 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.php">Accueil</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./profile.php">Profil</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="./index.php">Accueil</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Invitations</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <button class="btn btn-outline-danger my-2 my-sm-0" type="link">Déconnexion</button>
                     </li>
                 </ul>
             </div>
