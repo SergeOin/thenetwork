@@ -6,6 +6,7 @@
                 <div class="col-lg-4">
                     <div class="card profile-picture">
                         <div class="card-body">
+                            <button class="btn-outline-dark rounded float-right">+</button>
                             <img src="#" alt="Photo de profil">
                         </div>
                     </div>
