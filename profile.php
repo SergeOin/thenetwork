@@ -1,16 +1,24 @@
 <?php require_once 'includes/header.php'; ?>
 
-<?php
-$connected = true;
-if (!$connected):
-    header('Location: ./register.php');
-endif;
-?>
-
     <section>
         <div class="container">
-            Prénom
-            Nom
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card profile-picture">
+                        <div class="card-body">
+                            <img src="#" alt="Photo de profil">
+                        </div>
+                    </div>
+                    <div class="card profile-info">
+                        <div class="card-header">
+                            <div>-Prénom user--Nom user-</div>
+                        </div>
+                        <div class="card-body">
+                            <div>Informations</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

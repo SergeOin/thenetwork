@@ -11362,7 +11362,7 @@ textarea {
   resize: none;
 }
 
-.form-control {
+.form-control.auto-expand {
   border-top: 0;
   border-left: 0;
   border-right: 0;
@@ -11397,5 +11397,11 @@ textarea {
 .post-section {
   height: calc(100vh - (56px + 20px));
   overflow-y: scroll;
+}
+
+.card.profile-picture {
+  margin-bottom: 20px;
+  max-width: 100%;
+  padding-top: 75%;
 }
 
