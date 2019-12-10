@@ -22,7 +22,7 @@
                             Créer une publication
                         </div>
                         <div class="card-body">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Exprimez-vous"></textarea>
+                            <textarea class="form-control auto-expand" id="textaera" rows="2" placeholder="Exprimez-vous"></textarea>
                             <div class="mt-4 float-right">
                                 <button type="submit" class="btn btn-outline-dark">Publier</button>
                             </div>

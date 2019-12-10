@@ -13,7 +13,26 @@ try {
   window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
   __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
-} catch (e) {}
+} catch (e) {} // Autoresize pour les textaera
+
+
+jQuery.fn.extend({
+  autoHeight: function autoHeight() {
+    function autoHeight_(element) {
+      return jQuery(element).css({
+        'height': 'auto',
+        'overflow-y': 'hidden'
+      }).height(element.scrollHeight);
+    }
+
+    return this.each(function () {
+      autoHeight_(this).on('input', function () {
+        autoHeight_(this);
+      });
+    });
+  }
+});
+$('textarea').autoHeight();
 
 /***/ }),
 
