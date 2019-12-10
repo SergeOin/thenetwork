@@ -11390,13 +11390,21 @@ textarea {
   color: black;
 }
 
-.post {
+.post-item {
+  margin-bottom: 20px;
+}
+
+.post-form {
   margin-bottom: 20px;
 }
 
 .post-section {
   height: calc(100vh - (56px + 20px));
   overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .card.profile-picture {

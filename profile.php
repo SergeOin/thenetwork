@@ -18,6 +18,14 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-8 post-section">
+                    <div>
+                        <?php require_once 'includes/post-form.php' ?>
+                    </div>
+                    <div>
+                        <?php require_once 'includes/post-item.php'?>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
