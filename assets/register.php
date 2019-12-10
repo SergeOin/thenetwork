@@ -19,6 +19,11 @@ if($errored) {
     header("Location: ../register.php?errored=true");
 }
 
+if($data['password'] != $data['confirm_password']){
+    header("Location: ../register.php");
+    exit;
+}
+
 $dbh = connectDB();
 $stmt = $dbh->prepare('INSERT INTO users (first_name, last_name, email, password) VALUES (:first_name, :last_name, :email, :password)');
 $stmt->bindValue(':first_name', $data['first_name']);
