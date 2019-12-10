@@ -3,7 +3,7 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="card sidebar">
                         <div class="card-body">
                             <ul class="nav flex-column">
@@ -16,22 +16,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-8 post-section">
+                <div class="col-lg-9 post-section">
                     <div class="card post">
                         <div class="card-header">
                             Créer une publication
                         </div>
                         <div class="card-body">
-                            <textarea class="form-control auto-expand" id="textaera" rows="2" placeholder="Exprimez-vous"></textarea>
+                            <textarea class="form-control auto-expand" style="border-radius: 0" id="textaera" rows="2" placeholder="Exprimez-vous,-Prénom user-"></textarea>
                             <div class="mt-4 float-right">
                                 <button type="submit" class="btn btn-outline-dark">Publier</button>
                             </div>
                         </div>
                     </div>
                     <div class="card post">
-                        <div class="card-header">
-                            Profil
-                            <small id="date" class="form-text text-muted">Date Carbon</small>
+                        <div class="card-body" style="padding-bottom: 0px">
+                            -Prénom Nom user-
+                            <small id="date" class="form-text text-muted">Publié il y a-Date Carbon-</small>
                         </div>
                         <div class="card-body">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam architecto consectetur consequatur distinctio, dolores fugit quia quod repudiandae vero voluptas.
