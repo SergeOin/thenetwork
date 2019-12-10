@@ -13,6 +13,6 @@
   margin-bottom: 20px;
 }
 .post-section {
-  height: 90vh;
+  height: calc(100vh - (56px + 20px));
   overflow-y: scroll;
 }
