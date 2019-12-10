@@ -29,7 +29,7 @@
                             <input type="password" class="form-control" value="" name="confirm_password" id="password-validation">
                         </div>
                         <div class="text-center mb-3">
-                            <button type="submit" class="btn btn-success">Inscription</button>
+                            <button type="submit" class="btn btn-dark">Inscription</button>
                         </div>
                         <div class="text-center">
                             <a href="login.php">Connexion</a>

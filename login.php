@@ -1,7 +1,7 @@
 <?php require_once './includes/header.php'; ?>
 <section>
     <div class="container">
-        <div class="card">
+        <div class="card mx-auto" style="max-width: 500px">
             <div class="card-header text-center">Connexion</div>
             <div class="card-body">
                 <form action="./assets/login.php" method="POST">
