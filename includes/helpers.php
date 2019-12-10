@@ -1,24 +1,35 @@
 <?php
-require_once './env.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/env.php';
+session_start();
 
-// Fonction pour debug
 function dd($var){
     var_dump($var);
     die();
 }
 
-function connectDB(){
-    return new PDO("mysql:host=localhost;dbname=mspr", "root", "");
+function connectDB()
+{
+    global $database;
+    $host = $database ['host'];
+    $name = $database ['dbname'];
+    $username = $database ['username'];
+    $password = $database ['password'];
+    return new PDO("mysql:host=$host; dbname=$name", "$username", "$password");
 }
 
-function hasError($field){
-
+function getDateForHuman($date){
+    return \Carbon\Carbon::make($date)->DiffForHuman();
 }
 
+function getAvatar($user){
+
+}
+// Fonction pour debug
 /*
-function getUser($id){
+function getUsers(){
     $dbh = connectDB();
-    $dbh->query("SELECT * FROM users WHERE id = $id LIMIT 1");
-    return $dbh->fetch();
+    $stmt = $dbh->prepare('SELECT * FROM users');
+    $stmt -> execute();
+    return $stmt =
 }
 */
