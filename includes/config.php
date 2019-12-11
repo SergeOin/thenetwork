@@ -1,4 +1,4 @@
 <?php
 use Carbon\Carbon;
 
-Carbon::setLocale('fr');
+Carbon::setLocale('fr_FR');
