@@ -7,8 +7,8 @@
                     <div class="card profile-picture">
                         <img class="d-block w-100" src="https://resize-parismatch.lanmedia.fr/img/var/news/storage/images/paris-match/people-a-z/michel-drucker/6000670-8-fre-FR/Michel-Drucker.jpg" alt="profile-picture">
                     </div>
-                    <div class="card profile-info">
-                        <div class="card-header">
+                    <div class="card">
+                        <div class="card-header profile-name">
                             <div class="h2"><?php echo getAuth()['first_name']?> <?php echo getAuth()['last_name']?></div>
                             <small class="mb-2">Inscrit <?php echo getDateForHumans(getAuth()['created_at']);?></small>
                         </div>

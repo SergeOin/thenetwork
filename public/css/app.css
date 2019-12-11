@@ -11412,3 +11412,8 @@ textarea {
   max-width: 100%;
 }
 
+.card-header.profile-name {
+  background-color: #292b2c;
+  color: white;
+}
+
