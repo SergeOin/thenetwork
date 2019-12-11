@@ -5,18 +5,17 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="card profile-picture">
-                        <div class="card-body">
-                            <img class="d-block w-100" src="#" alt="Photo de profil">
-                        </div>
+                        <img class="d-block w-100" src="https://resize-parismatch.lanmedia.fr/img/var/news/storage/images/paris-match/people-a-z/michel-drucker/6000670-8-fre-FR/Michel-Drucker.jpg" alt="profile-picture">
                     </div>
                     <div class="card profile-info">
                         <div class="card-header">
                             <div class="h2"><?php echo getAuth()['first_name']?> <?php echo getAuth()['last_name']?></div>
-                            <p class="mb-0">Inscrit <?php echo getDateForHumans(getAuth()['created_at']);?></p>
+                            <small class="mb-2">Inscrit <?php echo getDateForHumans(getAuth()['created_at']);?></small>
                         </div>
                         <div class="card-body">
-                            <div>Informations</div>
-
+                            <div class="h4">Informations</div>
+                            <p class="mt-3">Anniversaire : <?php echo getAuth()['birthday']?></p>
+                            <p>Genre : <?php echo getAuth()['gender']?></p>
                         </div>
                     </div>
                 </div>
