@@ -1,6 +1,5 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/mspr/env.php';
-
 session_start();
 
 function dd($var){
@@ -19,7 +18,7 @@ function connectDB()
 }
 
 function getDateForHumans($date){
-    return \Carbon\Carbon::make($date)->DiffForHuman();
+    return \Carbon\Carbon::make($date)->DiffForHumans();
 }
 function getUser($id){
     $dbh = connectDB();
