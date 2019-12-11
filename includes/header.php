@@ -1,8 +1,6 @@
-<?php require_once 'vendor/autoload.php'; ?>
-<?php require_once 'includes/config.php'; ?>
-<?php require_once 'includes/helpers.php'; ?>
-
-<?php session_start(); ?>
+<?php require_once './vendor/autoload.php'; ?>
+<?php require_once './includes/config.php'; ?>
+<?php require_once './includes/helpers.php'; ?>
 
 <!doctype html>
 <html lang="fr">
@@ -26,6 +24,7 @@
                     <input class="form-control mr-sm-2" style="width: 30vw" type="search" placeholder="Rechercher" aria-label="Search">
                     <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Rechercher</button>
                 </form>
+                <?php if(isAuth()): ?>
                 <ul class="navbar-nav mt-2 mr-4 mt-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" href="./index.php">Accueil</a>
@@ -39,9 +38,19 @@
                 </ul>
                 <ul class="navbar-nav mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <button class="btn btn-outline-danger my-2 my-sm-0" type="link">Déconnexion</button>
+                        <a class="btn btn-outline-danger my-2 my-sm-0" href="../assets/logout.php">Déconnexion</a>
                     </li>
                 </ul>
+                <?php else: ?>
+                <ul class="navbar-nav mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="btn btn-outline-primary mr-3 my-2 my-sm-0" href="login.php">Connexion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-success my-2 my-sm-0" href="register.php">Inscription</a>
+                    </li>
+                </ul>
+                <?php endif; ?>
             </div>
         </nav>
     </header>
