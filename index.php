@@ -6,13 +6,16 @@
                 <div class="col-lg-3">
                     <?php require_once './includes/sidebar.php' ?>
                 </div>
-                <div class="col-lg-9 post-section">
+                <div class="col-lg-6 post-section">
                     <div>
                         <?php require_once './includes/post-form.php' ?>
                     </div>
                     <div>
                         <?php require_once './includes/post-item.php'?>
                     </div>
+                </div>
+                <div class="col-lg-3">
+                    <?php require_once './includes/sidebar-friends.php' ?>
                 </div>
             </div>
         </div>
