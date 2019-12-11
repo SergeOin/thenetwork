@@ -1,5 +1,6 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/mspr/env.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . './env.php';
+
 session_start();
 
 function dd($var){
@@ -20,6 +21,7 @@ function connectDB()
 function getDateForHumans($date){
     return \Carbon\Carbon::make($date)->DiffForHumans();
 }
+
 function getUser($id){
     $dbh = connectDB();
     $stmt = $dbh->prepare('SELECT * FROM users WHERE id = :id');
@@ -27,18 +29,6 @@ function getUser($id){
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
-
-function getUsers(){
-    $dbh = connectDB();
-    $stmt = $dbh->prepare('SELECT * FROM users');
-    $stmt -> execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-
-function isAuth(){
-    return isset($_SESSION['auth_id']);
-}
-
 function getAuth(){
     if(!isAuth()){
         return false;
@@ -46,7 +36,11 @@ function getAuth(){
     return getUser($_SESSION['auth_id']);
 }
 
-function getAuthId(){
-    $auth = getAuth();
-    return $auth['id'];
+function isAuth(){
+    return isset ($_SESSION['auth_id']);
 }
+
+$dbh = connectDB();
+$query = $dbh->prepare('SELECT * from posts');
+$query->execute();
+$posts = $query->fetchAll();

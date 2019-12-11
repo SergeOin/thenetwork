@@ -33,5 +33,5 @@ $stmt->bindValue(':password', sha1($data['password']));
 $stmt->execute();
 
 $id = $dbh->lastInsertId();
-header("Location: ../index.php?id=$id");
+header("Location: ../login.php");
 exit;

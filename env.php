@@ -1,5 +1,6 @@
 <?php
-    $database = [
+
+   $database = [
         'host' => 'localhost',
         'dbname' => 'mspr',
         'username' => 'root',

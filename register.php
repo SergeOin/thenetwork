@@ -5,9 +5,7 @@
             <div class="card mx-auto" style="max-width: 500px">
                 <div class="card-header text-center">Inscription</div>
                 <div class="card-body">
-
                     <form action="./assets/register.php" method="POST">
-
                         <div class="form-group">
                             <label for="first-name">Prénom</label>
                             <input class="form-control" name="first_name" id="first-name">
