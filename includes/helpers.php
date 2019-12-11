@@ -45,3 +45,17 @@ $query = $dbh->prepare('SELECT * from posts');
 $query->execute();
 $posts = $query->fetchAll();
 
+
+function getAuthPost(){
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT * from posts WHERE user_id = $id');
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+function getAuthId(){
+    if(!isAuth()){
+        return false;
+    }
+    return getAuthPost($_SESSION['auth_id']);
+}
