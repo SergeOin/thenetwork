@@ -44,3 +44,4 @@ $dbh = connectDB();
 $query = $dbh->prepare('SELECT * from posts');
 $query->execute();
 $posts = $query->fetchAll();
+
