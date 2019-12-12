@@ -1,6 +1,6 @@
 <div class="card sidebar">
-        <ul class="nav flex-column card-body profile">
-            <li class="nav-item text-center"><a class="nav-link" href="./profile.php"><img class="w-100 mr-2 mb-1 rounded-circle" style="max-width: 30px" src="https://resize-parismatch.lanmedia.fr/img/var/news/storage/images/paris-match/people-a-z/michel-drucker/6000670-8-fre-FR/Michel-Drucker.jpg" alt="profile-picture"><?php echo getAuth()['first_name']?> <?php echo getAuth()['last_name']?></a></li>
+        <ul class="nav flex-column card-body text-center profile">
+            <li class="nav-item"><a class="nav-link" href="./profile.php"><img class="w-100 d-block rounded-circle mx-auto mb-2" style="max-width: 50px" src="https://resize-parismatch.lanmedia.fr/img/var/news/storage/images/paris-match/people-a-z/michel-drucker/6000670-8-fre-FR/Michel-Drucker.jpg" alt="profile-picture"><?php echo getAuth()['first_name']?> <?php echo getAuth()['last_name']?></a></li>
         </ul>
         <ul class="nav flex-column card-body">
             <li class="nav-item"><a class="nav-link" href="./index.php">Fil d'actualité</a></li>
