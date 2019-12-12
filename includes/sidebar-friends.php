@@ -4,8 +4,9 @@
             <li class="nav-item mx-auto">Utilisateurs</li>
         </ul>
     </div>
-
+    <?php foreach (getUsers() as $user): ?>
     <div class="card-footer">
-        <p class="mt-1"><?php echo getAuth()['first_name']?></p>
+        <p class="mt-1"><?php echo $user['first_name']." ".$user['last_name']?></p>
     </div>
+    <?php endforeach; ?>
 </div>

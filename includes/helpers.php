@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/mspr/env.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/env.php';
 
 use Carbon\Carbon;
 
@@ -11,8 +11,7 @@ function dd($var)
     die();
 }
 
-function connectDB()
-{
+function connectDB(){
     global $database;
     $host = $database ['host'];
     $name = $database ['dbname'];
@@ -27,8 +26,7 @@ function getDateForHumans($date)
     return $c->DiffForHumans();
 }
 
-function getUser($id)
-{
+function getUser($id){
     $dbh = connectDB();
     $stmt = $dbh->prepare('SELECT * FROM users WHERE id = :id');
     $stmt->bindValue(':id', $id);
@@ -36,6 +34,12 @@ function getUser($id)
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
+function getUsers(){
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT * FROM users ');
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 function getAuth()
 {
     if (!isAuth()) {
@@ -49,8 +53,7 @@ function isAuth()
     return isset ($_SESSION['auth_id']);
 }
 
-function getPosts()
-{
+function getPosts(){
     $dbh = connectDB();
     $stmt = $dbh->prepare('SELECT posts.*, users.first_name, users.last_name FROM posts LEFT JOIN users ON posts.user_id = users.id');
     $stmt->execute();
