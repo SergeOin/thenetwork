@@ -31,5 +31,6 @@ $stmt->bindValue(':content', $data['content']);
 $stmt->execute();
 
 $id = $dbh->lastInsertId();
-header("Location: ../index.php?id=$id");
+$path = $_SERVER['HTTP_REFERER'];
+header("Location: $path");
 exit;

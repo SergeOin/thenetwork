@@ -1,5 +1,6 @@
 <?php require_once 'includes/header.php'; ?>
 <?php $id = isset($_SESSION['auth_id']) ? $_SESSION['auth_id'] : null ?>
+<?php $user = isset($_GET['id']) ? getUser($_GET['id']) : getAuth(); ?>
     <section>
         <div class="container">
             <div class="row">
@@ -9,13 +10,13 @@
                     </div>
                     <div class="card">
                         <div class="card-header profile-name">
-                            <div class="h2"><?php echo getAuth()['first_name']?> <?php echo getAuth()['last_name']?></div>
-                            <small class="mb-2">Inscrit <?php echo getDateForHumans(getAuth()['created_at']);?></small>
+                            <div class="h2"><?php echo $user['first_name']?> <?php echo $user['last_name']?></div>
+                            <small class="mb-2">Inscrit <?php echo getDateForHumans($user['created_at']);?></small>
                         </div>
                         <div class="card-body">
                             <div class="h4">Informations</div>
-                            <p class="mt-3">Anniversaire : <?php echo getAuth()['birthday']?></p>
-                            <p>Genre : <?php echo getAuth()['gender']?></p>
+                            <p class="mt-3">Anniversaire : <?php echo $user['birthday']?></p>
+                            <p>Genre : <?php echo $user['gender']?></p>
                             <div class="mt-4 text-center">
                                 <button type="button" class="btn btn-outline-dark w-100" data-toggle="modal" data-target="#myModal">Modifier mes infos</button>
                             </div>
@@ -40,31 +41,41 @@
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
                             <div class="modal-body">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroup-sizing-default">Anniversaire :</span>
+                                <form action="./assets/update-profile.php?id=<?php echo $user['id']; ?>" method="POST" name="post-update" id="post-update">
+                                    <div class="form-group">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroup-sizing-default">Anniversaire : </span>
+                                            </div>
+                                            <input type="date" value="<?php echo $user['birthday']; ?>" class="form-control" name="birthday" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="JJ/MM/AAAA">
+                                        </div>
                                     </div>
-                                    <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="JJ/MM/AAAA">
-                                </div>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <label class="input-group-text" for="inputGroupSelect01">Genre</label>
+                                    <div class="form-group">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <label class="input-group-text" for="inputGroupSelect01">Genre</label>
+                                            </div>
+                                            <select class="custom-select" name="gender" id="inputGroupSelect01">
+                                                <option>Choisir...</option>
+                                                <option value="1" <?php echo $user['gender'] == 1 ? 'selected' : null; ?>>Homme</option>
+                                                <option value="2" <?php echo $user['gender'] == 2 ? 'selected' : null; ?>>Femme</option>
+                                                <option value="3" <?php echo $user['gender'] == 3 ? 'selected' : null; ?>>Autre</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <select class="custom-select" id="inputGroupSelect01">
-                                        <option selected>Choisir...</option>
-                                        <option value="1">Femme</option>
-                                        <option value="2">Homme</option>
-                                        <option value="3">Autre</option>
-                                    </select>
-                                </div>
-                                <button type="button" class="btn btn-outline-dark mt-3" data-dismiss="modal">Enregistrer</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" form="post-update" class="btn btn-primary">Enregistrer</button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
             </div>
+
+        </div>
         </div>
     </section>
 

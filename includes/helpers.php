@@ -59,3 +59,11 @@ function getPosts(){
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function getUserPosts($id){
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT posts.*, users.first_name, users.last_name FROM posts LEFT JOIN users ON posts.user_id = users.id WHERE users.id = :id');
+    $stmt->bindValue('id', $id);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}

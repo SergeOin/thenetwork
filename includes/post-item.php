@@ -6,7 +6,10 @@
     <div class="card-body">
         <span><?php echo $post['content']; ?></span>
     </div>
+    <form action="./assets/addlike.php" method="POST">
     <div class="card-body footer-section">
-        <button class="btn btn-outline-success">J'aime</button>
-</div>
+        <a class="btn btn-outline-success" href="./assets/addlike.php">J'aime</a>
+        <span class="">Like</span>
+    </div>
+    </form>
 </div>
