@@ -10,7 +10,7 @@
     </div>
     <div class="card-body footer-section">
         <a class="btn btn-outline-success float-left mr-2" href="./assets/addlike.php">J'aime</a>
-        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal">Comment</button>
+        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal">Commenter</button>
         <?php require_once './includes/comment.php'?>
     </div>
 </div>
