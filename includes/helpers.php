@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/env.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/mspr/env.php';
 
 use Carbon\Carbon;
 
@@ -55,14 +55,14 @@ function isAuth()
 
 function getPosts(){
     $dbh = connectDB();
-    $stmt = $dbh->prepare('SELECT posts.*, users.first_name, users.last_name FROM posts LEFT JOIN users ON posts.user_id = users.id');
+    $stmt = $dbh->prepare('SELECT posts.*, users.first_name, users.last_name FROM posts LEFT JOIN users ON posts.user_id = users.id ORDER BY posts.created_at DESC');
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 function getUserPosts($id){
     $dbh = connectDB();
-    $stmt = $dbh->prepare('SELECT posts.*, users.first_name, users.last_name FROM posts LEFT JOIN users ON posts.user_id = users.id WHERE users.id = :id');
+    $stmt = $dbh->prepare('SELECT posts.*, users.first_name, users.last_name FROM posts LEFT JOIN users ON posts.user_id = users.id WHERE users.id = :id ORDER BY posts.created_at DESC');
     $stmt->bindValue('id', $id);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
