@@ -1,4 +1,5 @@
 <?php require_once 'includes/header.php'; ?>
+<?php $id = isset($_SESSION['auth_id']) ? $_SESSION['auth_id'] : null ?>
     <section>
         <div class="container">
             <div class="row">
@@ -26,12 +27,11 @@
                         <?php require_once './includes/post-form.php' ?>
                     </div>
                     <div>
-                        <?php foreach (getPosts() as $post): ?>
+                        <?php foreach (getUserPosts($id) as $post): ?>
                             <?php require './includes/post-item.php'?>
                         <?php endforeach; ?>
                     </div>
                 </div>
-
                 <div class="modal fade" id="myModal" role="dialog">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
