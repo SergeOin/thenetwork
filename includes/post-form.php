@@ -9,4 +9,5 @@
             <button type="submit" class="btn btn-outline-dark">Publier</button>
         </div>
     </div>
+    </form>
 </div>
