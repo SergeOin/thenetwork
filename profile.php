@@ -11,7 +11,7 @@
                     <div class="card">
                         <div class="card-header profile-name">
                             <div class="h2"><?php echo getAuth()['first_name']?> <?php echo getAuth()['last_name']?></div>
-                            <small class="mb-2">Inscrit <?php echo getDateForHumans($user['created_at']);?></small>
+                            <small class="mb-2">Inscrit <?php echo getDateForHumans(getAuth()['created_at']);?></small>
                         </div>
                         <div class="card-body">
                             <div class="h4">Informations</div>
