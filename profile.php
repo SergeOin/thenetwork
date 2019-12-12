@@ -16,10 +16,9 @@
                             <p class="mt-3">Anniversaire : <?php echo getAuth()['birthday']?></p>
                             <p>Genre : <?php echo getAuth()['gender']?></p>
                             <div class="mt-2 mb-4 float-right">
-                                <button type="submit" class="btn btn-outline-dark">Modifier mes infos</button>
+                                <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#myModal">Modifier mes infos</button>
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <div class="col-lg-8 post-section">
@@ -32,6 +31,23 @@
                         <?php endforeach; ?>
                     </div>
                 </div>
+
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title text-left">Modifier vos informations</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>This is a large modal.</p>
+                                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             </div>
         </div>
     </section>
