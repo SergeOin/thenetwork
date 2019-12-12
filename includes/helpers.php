@@ -1,9 +1,12 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . './env.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/mspr/env.php';
+
+use Carbon\Carbon;
 
 session_start();
 
-function dd($var){
+function dd($var)
+{
     var_dump($var);
     die();
 }
@@ -18,31 +21,38 @@ function connectDB()
     return new PDO("mysql:host=$host; dbname=$name", "$username", "$password");
 }
 
-function getDateForHumans($date){
-    return \Carbon\Carbon::make($date)->DiffForHumans();
+function getDateForHumans($date)
+{
+    $c = new Carbon($date, 'Europe/Paris');
+    return $c->DiffForHumans();
 }
 
-function getUser($id){
+function getUser($id)
+{
     $dbh = connectDB();
     $stmt = $dbh->prepare('SELECT * FROM users WHERE id = :id');
     $stmt->bindValue(':id', $id);
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
-function getAuth(){
-    if(!isAuth()){
+
+function getAuth()
+{
+    if (!isAuth()) {
         return false;
     }
     return getUser($_SESSION['auth_id']);
 }
 
-function isAuth(){
+function isAuth()
+{
     return isset ($_SESSION['auth_id']);
 }
 
-function getPosts(){
+function getPosts()
+{
     $dbh = connectDB();
-    $stmt = $dbh->prepare('SELECT * FROM posts LEFT JOIN users ON posts.user_id = users.id');
+    $stmt = $dbh->prepare('SELECT posts.*, users.first_name, users.last_name FROM posts LEFT JOIN users ON posts.user_id = users.id');
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }

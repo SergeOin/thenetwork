@@ -6,4 +6,7 @@
     <div class="card-body">
         <span><?php echo $post['content']; ?></span>
     </div>
+    <div class="card-body footer-section">
+        <button class="btn btn-outline-success">J'aime</button>
+</div>
 </div>

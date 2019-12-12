@@ -11394,6 +11394,13 @@ textarea {
   margin-bottom: 20px;
 }
 
+.card-body.footer-section {
+  border-top: 1px solid #ced4da;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
 .post-form {
   margin-bottom: 20px;
 }
