@@ -1,6 +1,11 @@
 <?php
 require_once '../includes/helpers.php';
 
+if(!isAuth()){
+    header('Location: ./login.php');
+    exit;
+}
+
 $data = [];
 $fields = [];
 $errored = false;
@@ -19,8 +24,9 @@ if($errored) {
 }
 
 $dbh = connectDB();
-$stmt = $dbh->prepare('INSERT INTO posts (img, content) VALUES (:img, :content)');
+$stmt = $dbh->prepare('INSERT INTO posts (img, user_id, content) VALUES (:img, :user_id, :content)');
 $stmt->bindValue(':img', $data['img']);
+$stmt->bindValue(':user_id', $_SESSION['auth_id']);
 $stmt->bindValue(':content', $data['content']);
 $stmt->execute();
 

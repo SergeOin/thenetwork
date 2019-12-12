@@ -40,22 +40,9 @@ function isAuth(){
     return isset ($_SESSION['auth_id']);
 }
 
-$dbh = connectDB();
-$query = $dbh->prepare('SELECT * from posts');
-$query->execute();
-$posts = $query->fetchAll();
-
-
-function getAuthPost(){
+function getPosts(){
     $dbh = connectDB();
-    $stmt = $dbh->prepare('SELECT * from posts WHERE user_id = $id');
+    $stmt = $dbh->prepare('SELECT * FROM posts LEFT JOIN users ON posts.user_id = users.id');
     $stmt->execute();
-    return $stmt->fetch(PDO::FETCH_ASSOC);
-}
-
-function getAuthId(){
-    if(!isAuth()){
-        return false;
-    }
-    return getAuthPost($_SESSION['auth_id']);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }

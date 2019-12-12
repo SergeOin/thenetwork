@@ -1,6 +1,6 @@
 <?php require_once './vendor/autoload.php'; ?>
-<?php require_once './includes/config.php'; ?>
-<?php require_once './includes/helpers.php'; ?>
+<?php require_once 'config.php'; ?>
+<?php require_once 'helpers.php'; ?>
 
 <!doctype html>
 <html lang="fr">
@@ -37,6 +37,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Invitations</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="collapse" href="#debug">Debug</a>
+                        </li>
                     </ul>
                     <ul class="navbar-nav mt-2 mt-lg-0">
                         <li class="nav-item">
@@ -47,7 +50,7 @@
                     <div class="ml-auto">
                         <ul class="navbar-nav mt-2 mt-lg-0">
                             <li class="nav-item">
-                                <a class="btn btn-outline-primary mr-3 my-2 my-sm-0" href="login.php">Connexion</a>
+                                <a class="btn btn-outline-light mr-3 my-2 my-sm-0" href="login.php">Connexion</a>
                             </li>
                             <li class="nav-item">
                                 <a class="btn btn-outline-success my-2 my-sm-0" href="register.php">Inscription</a>
@@ -58,4 +61,5 @@
             </div>
         </nav>
     </header>
+    <?php require_once './includes/debug.php'; ?>
     <main id="main">

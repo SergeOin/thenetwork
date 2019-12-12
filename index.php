@@ -1,5 +1,4 @@
 <?php require_once './includes/header.php'; ?>
-
     <section>
         <div class="container">
             <div class="row">
@@ -11,7 +10,9 @@
                         <?php require_once './includes/post-form.php' ?>
                     </div>
                     <div>
-                        <?php require_once './includes/post-item.php'?>
+                        <?php foreach (getPosts() as $post): ?>
+                            <?php require './includes/post-item.php'?>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
