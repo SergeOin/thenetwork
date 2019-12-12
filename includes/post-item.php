@@ -9,7 +9,8 @@
         <span><?php echo $post['content']; ?></span>
     </div>
     <div class="card-body footer-section">
-        <a class="btn btn-outline-success" href="./assets/addlike.php">J'aime</a>
-        <span class="">Like</span>
+        <a class="btn btn-outline-success float-left mr-2" href="./assets/addlike.php">J'aime</a>
+        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal">Comment</button>
+        <?php require_once './includes/comment.php'?>
     </div>
 </div>
