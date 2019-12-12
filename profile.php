@@ -15,8 +15,8 @@
                             <div class="h4">Informations</div>
                             <p class="mt-3">Anniversaire : <?php echo getAuth()['birthday']?></p>
                             <p>Genre : <?php echo getAuth()['gender']?></p>
-                            <div class="mt-2 mb-4 float-right">
-                                <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#myModal">Modifier mes infos</button>
+                            <div class="mt-4 text-center">
+                                <button type="button" class="btn btn-outline-dark w-100" data-toggle="modal" data-target="#myModal">Modifier mes infos</button>
                             </div>
                         </div>
                     </div>
@@ -36,12 +36,28 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
+                                <h4 class="modal-title text-right">Modifier vos informations</h4>
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title text-left">Modifier vos informations</h4>
                             </div>
                             <div class="modal-body">
-                                <p>This is a large modal.</p>
-                                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default">Anniversaire :</span>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="JJ/MM/AAAA">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="inputGroupSelect01">Genre</label>
+                                    </div>
+                                    <select class="custom-select" id="inputGroupSelect01">
+                                        <option selected>Choisir...</option>
+                                        <option value="1">Femme</option>
+                                        <option value="2">Homme</option>
+                                        <option value="3">Autre</option>
+                                    </select>
+                                </div>
+                                <button type="button" class="btn btn-outline-dark mt-3" data-dismiss="modal">Enregistrer</button>
                             </div>
                         </div>
                     </div>
