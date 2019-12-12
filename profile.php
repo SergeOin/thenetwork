@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="card profile-picture">
-                        <img class="d-block w-100" src="https://resize-parismatch.lanmedia.fr/img/var/news/storage/images/paris-match/people-a-z/michel-drucker/6000670-8-fre-FR/Michel-Drucker.jpg" alt="profile-picture">
+                        <img class="d-block w-100" src="https://www.gravatar.com/avatar/<?php echo md5(getAuth()['email']); ?>?s=600" alt="profile-picture">
                     </div>
                     <div class="card">
                         <div class="card-header profile-name">
