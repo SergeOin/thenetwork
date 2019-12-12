@@ -35,9 +35,6 @@
                             <a class="nav-link" href="./profile.php?id=$id">Profil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Invitations</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" data-toggle="collapse" href="#debug">Debug</a>
                         </li>
                     </ul>
