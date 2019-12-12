@@ -67,10 +67,3 @@ function getUserPosts($id){
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
-
-function getComments(){
-    $dbh = connectDB();
-    $stmt = $dbh->prepare('SELECT comments.*, users.first_name, users.last_name FROM comments LEFT JOIN users ON posts.user_id = users.id ORDER BY posts.created_at DESC');
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
