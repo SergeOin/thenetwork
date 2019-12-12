@@ -11390,6 +11390,14 @@ textarea {
   color: black;
 }
 
+.card-body.profile {
+  border-bottom: 1px solid #ced4da;
+}
+
+.card-body.title {
+  border-bottom: 1px solid #ced4da;
+}
+
 .post-item {
   margin-bottom: 20px;
 }
