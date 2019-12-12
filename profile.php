@@ -15,15 +15,21 @@
                             <div class="h4">Informations</div>
                             <p class="mt-3">Anniversaire : <?php echo getAuth()['birthday']?></p>
                             <p>Genre : <?php echo getAuth()['gender']?></p>
+                            <div class="mt-2 mb-4 float-right">
+                                <button type="submit" class="btn btn-outline-dark">Modifier mes infos</button>
+                            </div>
                         </div>
+
                     </div>
                 </div>
                 <div class="col-lg-8 post-section">
                     <div>
-                        <?php require_once 'includes/post-form.php' ?>
+                        <?php require_once './includes/post-form.php' ?>
                     </div>
                     <div>
-                        <?php require_once 'includes/post-item.php'?>
+                        <?php foreach (getPosts() as $post): ?>
+                            <?php require './includes/post-item.php'?>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
