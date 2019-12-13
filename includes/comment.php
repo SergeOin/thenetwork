@@ -14,14 +14,14 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-default">Ajoutez votre commentaire : </span>
                             </div>
-                            <input type="text" value="" class="form-control" name="birthday" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="écrivez ici...">
+                            <input type="text" value="" class="form-control" name="birthday" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Écrivez ici...">
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                <button type="submit" form="post-comment" class="btn btn-primary">Enregistrer</button>
+                <button type="submit" form="post-comment" class="btn btn-primary">Publier</button>
             </div>
         </div>
     </div>
