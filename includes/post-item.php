@@ -9,7 +9,7 @@
         <span><?php echo $post['content']; ?></span>
     </div>
     <div class="card-body footer-section pt-1 pb-1">
-        <small id="like" class="form-text text-muted"><?php echo count(getLikePost($id)); ?> Mention(s) j'aime</small>
+        <small id="like" class="form-text text-muted"><?php echo count(getLikePost($id)); ?> mention(s) j'aime</small>
     </div>
     <div class="card-body footer-section">
         <a class="btn btn-outline-success float-left mr-2" href="./assets/addlike.php?id=<?php echo $user['id']; ?>">J'aime</a>

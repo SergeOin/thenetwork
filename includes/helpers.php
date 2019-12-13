@@ -86,8 +86,8 @@ function getUserComment($id){
 function getLike($id){
     $dbh = connectDB();
     $stmt = $dbh->prepare('INSERT INTO user_post (user_id, post_id) VALUES (:user_id, :post_id)');
-    $stmt->bindValue(':user_id', $id);
-    $stmt->bindValue(':post_id', $_SESSION['auth_id']);
+    $stmt->bindValue(':user_id', $_SESSION['auth_id']);
+    $stmt->bindValue(':post_id', $id);
     $stmt->execute();
 }
 

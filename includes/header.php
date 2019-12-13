@@ -32,7 +32,7 @@
                             <a class="nav-link" href="./index.php">Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./profile.php?id=$id">Profil</a>
+                            <a class="nav-link" href="./profile.php">Profil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="collapse" href="#debug">Debug</a>
