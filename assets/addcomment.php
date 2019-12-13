@@ -9,9 +9,9 @@ foreach ($_POST as $name => $value){
 }
 
 $dbh = connectDB();
-$stmt = $dbh->prepare("INSERT INTO comments (content) VALUES (:content) WHERE id = :id");
+$stmt = $dbh->prepare("INSERT INTO comments (content, author_id) VALUES (:content, :author_id)");
 $stmt->bindValue(':content', $data['content']);
-$stmt->bindValue(':content', $id);
+$stmt->bindValue(':author_id', $id);
 $stmt->execute();
 
 $path = $_SERVER['HTTP_REFERER'];
