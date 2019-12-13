@@ -43,8 +43,7 @@
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
                         <div class="modal-body">
-                            <form action="./assets/update-profile.php?id=<?php echo $user['id']; ?>" method="POST"
-                                  name="post-update" id="post-update">
+                            <form action="./assets/update-profile.php?id=<?php echo $user['id']; ?>" method="POST" name="post-update" id="post-update">
                                 <div class="form-group">
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">

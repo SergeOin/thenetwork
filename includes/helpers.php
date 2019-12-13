@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/mspr/env.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/env.php';
 
 use Carbon\Carbon;
 
@@ -63,6 +63,21 @@ function getPosts(){
 function getUserPosts($id){
     $dbh = connectDB();
     $stmt = $dbh->prepare('SELECT posts.*, users.first_name, users.last_name FROM posts LEFT JOIN users ON posts.user_id = users.id WHERE users.id = :id ORDER BY posts.created_at DESC');
+    $stmt->bindValue('id', $id);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function getComment(){
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT comments.*, users.first_name, users.last_name FROM comments LEFT JOIN users ON comments.author_id = users.id ORDER BY comments.created_at DESC');
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function getUserComment($id){
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT comments.*, users.first_name, users.last_name FROM comments LEFT JOIN users ON comments.author_id = users.id WHERE users.id = :id ORDER BY comments.created_at DESC');
     $stmt->bindValue('id', $id);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
