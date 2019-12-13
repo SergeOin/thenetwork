@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/env.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/mspr/env.php';
 
 use Carbon\Carbon;
 
@@ -20,8 +20,7 @@ function connectDB(){
     return new PDO("mysql:host=$host; dbname=$name", "$username", "$password");
 }
 
-function getDateForHumans($date)
-{
+function getDateForHumans($date){
     $c = new Carbon($date, 'Europe/Paris');
     return $c->DiffForHumans();
 }
