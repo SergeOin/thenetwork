@@ -18,15 +18,17 @@
         <button class="btn btn-outline-dark dropdown-toggle float-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></button>
         <div class="collapse" id="collapseExample">
             <!--Il faudrait insérer une boucle ici-->
+            <?php foreach (getComment() as $comment): ?>
             <div class="card mt-4">
                 <div class="card-body">
                     <span>-Nom/Prénom-</span>
                     <small id="date" class="form-text text-muted">Publié <?php echo getDateForHumans($post['created_at']) ?></small>
                 </div>
                 <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                    <?php echo $comment['content']; ?>
                 </div>
             </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>
