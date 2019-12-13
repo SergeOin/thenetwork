@@ -19,4 +19,3 @@ if($user['password'] === sha1($data['password'])){
 } else {
     header("Location: ../login.php");
 }
-

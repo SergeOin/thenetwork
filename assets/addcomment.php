@@ -17,4 +17,3 @@ $stmt->execute();
 $path = $_SERVER['HTTP_REFERER'];
 header("Location: $path");
 exit;
-
