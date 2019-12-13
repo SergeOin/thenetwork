@@ -21,7 +21,7 @@
             <?php foreach (getComment() as $comment): ?>
             <div class="card mt-4">
                 <div class="card-body">
-                    <span>-Nom/Prénom-</span>
+                    <span><?php echo $comment['first_name']." ".$comment['last_name']; ?></span>
                     <small id="date" class="form-text text-muted">Publié <?php echo getDateForHumans($post['created_at']) ?></small>
                 </div>
                 <div class="card-body">
