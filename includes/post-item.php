@@ -7,18 +7,25 @@
     </div>
     <div class="card-body">
         <span><?php echo $post['content']; ?></span>
-        <small id="like" class="form-text text-muted"><?php echo count(getLikePost($post['id'])); ?> like</small>
+    </div>
+    <div class="card-body footer-section pt-1 pb-1">
+        <small id="like" class="form-text text-muted"><?php echo count(getLikePost($id)); ?> Mention(s) j'aime</small>
     </div>
     <div class="card-body footer-section">
         <a class="btn btn-outline-success float-left mr-2" href="./assets/addlike.php?id=<?php echo $user['id']; ?>">J'aime</a>
         <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#to-comment">Commenter</button>
         <?php require_once './includes/comment.php'?>
-        <button class="btn btn-outline-danger float-left mr-2" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-            Voir les commentaires
-        </button>
+        <button class="btn btn-outline-dark dropdown-toggle float-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></button>
         <div class="collapse" id="collapseExample">
-            <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+            <!--Il faudrait insérer une boucle ici-->
+            <div class="card mt-4">
+                <div class="card-body">
+                    <span>-Nom/Prénom-</span>
+                    <small id="date" class="form-text text-muted">Publié <?php echo getDateForHumans($post['created_at']) ?></small>
+                </div>
+                <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                </div>
             </div>
         </div>
     </div>
