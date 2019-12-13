@@ -82,3 +82,19 @@ function getUserComment($id){
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function getLike($id){
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('INSERT INTO user_post (user_id, post_id) VALUES (:user_id, :post_id)');
+    $stmt->bindValue(':user_id', $id);
+    $stmt->bindValue(':post_id', $_SESSION['auth_id']);
+    $stmt->execute();
+}
+
+function getLikePost($id){
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT * FROM user_post WHERE post_id = :id');
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
